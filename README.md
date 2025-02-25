@@ -26,9 +26,7 @@ target - сборка исходного кода
 
 README.md
 
-### 1.2. Команды для создания структуры проекта
-
-<a name="12"></a>
+### <a name="12"></a>1.2. Команды для создания структуры проекта
 
 mkdir P1_intro
 
@@ -40,9 +38,7 @@ cd src
 
 mkdir -p main/java main/resources test/java test/resources
 
-### 1.3. Дерево чистого проекта
-
-<a name="13"></a>
+### <a name="13"></a>1.3. Дерево чистого проекта
 
 └── P1_intro\
     ├── README_RUS.md\

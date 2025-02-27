@@ -136,5 +136,32 @@
     - Исправил замечания по стилям с помощью плагина Eclipse и командной строки согласно [п.2](#2)
     - Добавил файлы README.md, src/main/java/Hello.java, target/Hello.class в индекс `git add`.
     - Файлы, созданные IDE Eclipse в индекс не помещал.
+    - Сделал приватный конструктор и добавил исключение, согласно [checkstyle](https://checkstyle.sourceforge.io/checks/design/hideutilityclassconstructor.html#HideUtilityClassConstructor). Это нужно для того чтобы нельзя было делать экземпляр final-класса со статическим методом main
     - Сделал `git commit -m`, затем `git push origin develop`
-
+    - Изменил структуру проекта - добавил `package maxdsc.quests.hellojava` для первого квеста, соответственно изменились команды для компиляции и запуска программы.
+    - Добавил `package-info.java`.
+    - Eclipse при компиляции проекта создает папку *bin*, в которой лежат скомпилированные классы согласно package. При компиляции вручную с консоли перемещал *.class*, которые находятся в package, в папку *target*.
+    - Команда для нахождения всех *.java* файлов в *src/* их компиляция в *target/* `javac -d ~/my_java_projects/P1_intro/target $(find ~/my_java_projects/P1_intro/src/ -name "*.java")`
+    - Для автоматизированной компиляции и проверок на стиль создал *Makefile*. Теперь для компиляции и запуска программы используется команда `make q1`, для проверки на стиль `make check`, форматирование всех java-файлов согласно Google Style Code `make format`, очистка папки target `make clean`
+    - Таким образом, дерево проекта выглядит так:\
+P1_intro/\
+├── Makefile\
+├── README.md\
+├── src\
+│   ├── main\
+│   │   ├── java\
+│   │   │   └── maxdsc\
+│   │   │       └── quests\
+│   │   │           └── hellojava\
+│   │   │               ├── Hello.java\
+│   │   │               └── package-info.java\
+│   │   └── resources\
+│   └── test\
+│       ├── java\
+│       └── resources\
+└── target\
+    └── maxdsc\
+        └── quests\
+            └── hellojava\
+                └── Hello.class
+    - Сделал коммит и `git push`
